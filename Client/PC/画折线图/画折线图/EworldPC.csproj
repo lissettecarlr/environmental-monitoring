@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A0740173-09A0-4950-B485-C9C02EE39EF4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>画折线图</RootNamespace>
+    <AssemblyName>画折线图</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DetailControl">
+      <HintPath>..\..\DetailControl\DetailControl\bin\Debug\DetailControl.dll</HintPath>
+    </Reference>
+    <Reference Include="LoadingControl">
+      <HintPath>..\..\LoadingControl\LoadingControl\bin\Debug\LoadingControl.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\PGSM\PGSM\bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleDetail">
+      <HintPath>..\..\SimpleDetail\SimpleDetail\bin\Debug\SimpleDetail.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph">
+      <HintPath>F:\0A开发资料收集文件\相关插件【.net】\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DirectFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DirectFrm.Designer.cs">
+      <DependentUpon>DirectFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuItem\AboutFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuItem\AboutFrm.Designer.cs">
+      <DependentUpon>AboutFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuItem\RegisterModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuItem\RegisterModel.Designer.cs">
+      <DependentUpon>RegisterModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MySqlHelper.cs" />
+    <Compile Include="MyTimer.cs" />
+    <Compile Include="OperationFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OperationFrm.Designer.cs">
+      <DependentUpon>OperationFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SocketSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SocketSet.Designer.cs">
+      <DependentUpon>SocketSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserRegister.Designer.cs">
+      <DependentUpon>UserRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WifiFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WifiFrm.Designer.cs">
+      <DependentUpon>WifiFrm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DirectFrm.resx">
+      <DependentUpon>DirectFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuItem\AboutFrm.resx">
+      <DependentUpon>AboutFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuItem\RegisterModel.resx">
+      <DependentUpon>RegisterModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperationFrm.resx">
+      <DependentUpon>OperationFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SocketSet.resx">
+      <DependentUpon>SocketSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserRegister.resx">
+      <DependentUpon>UserRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WifiFrm.resx">
+      <DependentUpon>WifiFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ReferenceClass\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green_Leaf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\loading.png" />
+    <Content Include="Resources\look.png" />
+    <Content Include="Resources\standby.png" />
+    <Content Include="Resources\start.png" />
+    <Content Include="Resources\reset.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

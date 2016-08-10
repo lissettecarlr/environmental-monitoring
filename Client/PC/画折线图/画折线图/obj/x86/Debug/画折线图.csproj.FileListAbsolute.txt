@@ -1,0 +1,8 @@
+D:\system\创新创业\画折线图\画折线图\bin\Debug\画折线图.exe
+D:\system\创新创业\画折线图\画折线图\bin\Debug\画折线图.pdb
+D:\system\创新创业\画折线图\画折线图\bin\Debug\ZedGraph.dll
+D:\system\创新创业\画折线图\画折线图\obj\x86\Debug\画折线图.Form1.resources
+D:\system\创新创业\画折线图\画折线图\obj\x86\Debug\画折线图.Properties.Resources.resources
+D:\system\创新创业\画折线图\画折线图\obj\x86\Debug\画折线图.csproj.GenerateResource.Cache
+D:\system\创新创业\画折线图\画折线图\obj\x86\Debug\画折线图.exe
+D:\system\创新创业\画折线图\画折线图\obj\x86\Debug\画折线图.pdb
