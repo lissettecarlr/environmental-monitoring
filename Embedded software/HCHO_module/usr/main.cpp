@@ -95,7 +95,7 @@ int main(){
 //			network=false; 
 //		}
 	
-	 exception=wifi.ConnectNetwork_client("FFF","f19940202","106.91.20.100",1111)
+	 exception=wifi.ConnectNetwork_client("FFF","f19940202","106.91.20.100",1111);
 	 if(exception==0xff)
 	 {
 			CMCT_Tool.SendAlive(wifi,HCHONumber,1);

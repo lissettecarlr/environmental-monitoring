@@ -10,7 +10,6 @@
 
 #define ESP8266_RECEIVE_BUFFER_SIZE  1000
 #define ESP8266_DEFAULT_TIMEOUT 3
-
 class esp8266
 {
 	public:
