@@ -24,11 +24,7 @@ bool ZPH01::Updata()
 			mUsart.GetReceivedData(mData,9); 
 		if(FucCheckSum(mData,8)==mData[8])
 		{
-//			data_h=mData[3];
-//			data_l=mData[4];
 			Concentration = (mData[3] + mData[4] /100.0)*20;	
-			data_h=(u8)Concentration; //保存整数
-			data_l=(u8)  ( (u16)(Concentration*10)%10 );  //保存小数
 			mUsart.ClearReceiveBuffer();
 			return true;
 		}
@@ -59,13 +55,3 @@ float ZPH01::GetFloatData()
 {
 	return Concentration;
 }		
-
-unsigned char ZPH01::Data_Hight_8()
-{
-	return data_h;
-}
-unsigned char ZPH01::Data_Low_8()
-{
-	return data_l;
-}
-

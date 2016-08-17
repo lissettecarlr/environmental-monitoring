@@ -494,11 +494,6 @@
               <FilePath>..\..\..\lib\offchip\ZPH01\ZPH01.cpp</FilePath>
             </File>
             <File>
-              <FileName>Senser.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\..\lib\offchip\ZPH01\Senser.h</FilePath>
-            </File>
-            <File>
               <FileName>ESP8266.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>..\..\..\lib\offchip\ESP8266\ESP8266.cpp</FilePath>

@@ -1,6 +1,6 @@
 #include "MHZ14.h"
 
-MHZ14::MHZ14(USART &com)
+MHZ14::MHZ14(USART &com,double timeout)
 :COM(com)
 {
 	//一帧数据读取指令
@@ -14,8 +14,7 @@ MHZ14::MHZ14(USART &com)
 	Command_getvalue[7]=0;
 	Command_getvalue[8]=0x79;
 	
-	DATA_H=0;
-	DATA_L=0;
+	Timeout = timeout;
 }
 
 
@@ -33,37 +32,39 @@ bool MHZ14::SumCheck(u8 data[9])
 		return false;
 }
 
-u16 MHZ14::GetValue()
+float MHZ14::GetFloatData()
 {
-	return CO2_Concentration;
+	return (float)CO2_Concentration;
 }
 
 
-bool MHZ14::Updata()
+unsigned char MHZ14::Updata()
 {	
+	double OldTime=0;
+	u8 rev_buffer[9]; //接收缓存
+	
 	//向模块发送获取数据
 	   COM.SendData(Command_getvalue,9);
-	
+		OldTime=tskmgr.Time();
 	//判断是否有数据返回
-	  if(COM.ReceiveBufferSize()<9)
-	  {
+	while(COM.ReceiveBufferSize()<9) 
+	{
+		if(tskmgr.Time() - OldTime >= Timeout)
+		{
 		  COM.ClearReceiveBuffer(); //清空接收缓存
-		  return false;
-	  }
-	  else
-	  {
-		  COM.GetReceivedData(rev_buffer,9); //取出一帧数据
-		   COM.ClearReceiveBuffer(); //清空接收缓存
+		  return 2;//超时
+		}
+	}
+
+		COM.GetReceivedData(rev_buffer,9); //取出一帧数据
+		COM.ClearReceiveBuffer(); //清空接收缓存
 		  
-		  if(SumCheck(rev_buffer)==false)  //校验和
-			  return false;
-		  else
-		  {
-			  DATA_H=rev_buffer[2];
-			  DATA_L=rev_buffer[3];
+		if(SumCheck(rev_buffer)==false)  //校验和
+			  return 3;//校验错误
+		else
+		 {
 			  CO2_Concentration=rev_buffer[2]*256+rev_buffer[3];  //计算浓度
-			  return true;
-		  }
-	  }
+			  return 1;//更新成功
+		 }
 }
 

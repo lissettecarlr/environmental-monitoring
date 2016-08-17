@@ -46,8 +46,6 @@ bool HCHO::Updata()
 						case 0x03:{data = datatemp/100.0;break;}
 						case 0x04:{data = datatemp/1000.0;break;}
 					}
-					data_h = (u8)data;
-					data_l = (u8) ( (data - data_h)*100 );  
 					mUsart.ClearReceiveBuffer();
 					return true;
 				
@@ -64,12 +62,3 @@ float HCHO::GetFloatData()
 }
 	
 //正常情况下不得超过0.10mg/m3
-
-unsigned char HCHO::Data_Hight_8()
-{
-	return data_h;
-}
-unsigned char HCHO::Data_Low_8()
-{
-	return data_l;
-}

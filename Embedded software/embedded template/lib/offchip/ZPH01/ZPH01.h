@@ -15,9 +15,9 @@
 
 #include <stm32f10x.h>
 #include "USART.h"
-#include "Senser.h"
 
-class ZPH01:Senser
+
+class ZPH01
 {
 	private:
 	
@@ -34,13 +34,8 @@ class ZPH01:Senser
 		
 		~ZPH01();
 	
-	  u8 data_h;//保存浓度半分比的整数部分
-		u8 data_l;//保存小数部分
-	
-		virtual bool  Updata();		//更新
-		virtual float GetFloatData();	//返回浓度值 单位ug/m3
-		virtual unsigned char Data_Hight_8(); 
-		virtual unsigned char Data_Low_8();
+		bool  Updata();		//更新
+		float GetFloatData();	//返回浓度值 单位ug/m3
 	
 };
 

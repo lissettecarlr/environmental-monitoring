@@ -2,10 +2,10 @@
  *  filename:HCHO.h
  *  brief: 这是一个甲烷传感器的驱动，传感器的型号是DS-HCHO.可以直接得到一个float的数据值
  *  单位是mg/m3,也可以得到两个8位数据，高位+低位/100=浓度，方便数据成帧传输
- *  version:1.2
+ *  删除了抽象类senser，且删除了数据辅助高低八位划分
+ *  version:1.3
  *  author: lissettecarlr
- *  data: 2016/5/27
- *  note: 一共三个文件 .H .CPP 和一个抽象类:Senser.h组成 
+ *  data: 2016/8/17
  ******************************************************************/  
 
 #ifndef _HCHO_H
@@ -27,7 +27,7 @@
 
 
 
-class HCHO:public Senser
+class HCHO
 {
 	private:
 		
@@ -42,21 +42,16 @@ class HCHO:public Senser
 	
 	public:
 			
-		u8 data_h;
-	  u8 data_l;
-	
 		HCHO(USART &usart);
 		~HCHO();
 	
-		virtual bool Updata();
+		bool Updata();
 	
 		/**
 		*@brief  得到甲醛浓度的数据
 		*@retval 甲醛浓度的高低字节数据
 		*/
-		virtual	float GetFloatData();		
-		virtual unsigned char Data_Hight_8(); 
-		virtual unsigned char Data_Low_8();
+		float GetFloatData();		
 };
 
 

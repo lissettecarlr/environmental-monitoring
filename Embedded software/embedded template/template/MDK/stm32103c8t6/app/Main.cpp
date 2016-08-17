@@ -33,7 +33,7 @@ GPIO ledBlueGPIO(GPIOB,1,GPIO_Mode_Out_PP,GPIO_Speed_50MHz);//LED GPIO
 LED ledRed(ledRedGPIO);//LED red
 LED ledBlue(ledBlueGPIO);//LED blue
 
-ZPH01 zph01(senser);
+//ZPH01 zph01(senser);
 
 int main()
 {
@@ -43,6 +43,8 @@ int main()
 	double record_OrderDeal=0;
 	double record_DataSend=0;
 	double record_DataReceive=0;
+	
+	
 	
 	while(1) 
 	{
