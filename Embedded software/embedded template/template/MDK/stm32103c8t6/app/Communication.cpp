@@ -40,26 +40,26 @@ bool Communication::DataListening(USART &ListeningCOM)
 						//功能字判断
 						while(ListeningCOM.ReceiveBufferSize()<4);//等待数据
 							ListeningCOM.GetReceivedData(data,4);		
-						if( Calibration(data,4,data[3] )) //如果校验正确
+						if( Calibration(data,3,data[3] )) //如果校验正确
 						{
-								Module=(u16)data[0]<<8+data[1];
+								Module=((u16)data[0]<<8 )+ data[1];
 								if(Module == ModuleNuber)
 								{
-									if(data[2] == 0x01) //待机
+									if(data[2] == DELAY) //待机
 									{
 										State = false;
 									}
-									else if(data[2] == 0x02)//启动
+									else if(data[2] == START)//启动
 									{
 										State = true;
 									}
-									else if(data[2] == 0x03)//复位
+									else if(data[2] == REAST)//复位
 									{
 										Resert=true;
 									}
-									else if(data[2] == 0xff)//存在确认
+									else if(data[2] == ALIVE)//存在确认
 									{
-											Ack = true;
+										Ack = true;
 									}
 									else
 									{
@@ -104,4 +104,18 @@ u8 *Communication::ToServerPack(u8 DataType,float Value,u16 Multiple,float Adc)
 		SendData[9]+=SendData[i];
 	return SendData;
 	
+}
+
+u8 *Communication::AckPacket(u8 Order)
+{
+	AckData[0]=0XFF;
+	AckData[1]=0XAA;
+	AckData[2]=(ModuleNuber>>8) 	&0xff;
+	AckData[3]=(ModuleNuber)			&0xff;
+	AckData[4]=Order;
+	AckData[5]=0;
+	
+	for(u8 i=2;i<5;i++)
+		AckData[5]+=AckData[i];
+	return AckData;
 }

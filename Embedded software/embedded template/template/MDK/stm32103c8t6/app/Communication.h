@@ -21,6 +21,12 @@
 
 #define ModuleNuber       0x0001
 
+//Order
+#define DELAY 		0x01
+#define START 		0x02
+#define REAST 		0x03
+#define ALIVE			0xff
+
 /*END*****************************************************/
 
 
@@ -28,6 +34,7 @@ class Communication{
 	
 	private:
 		u8 SendData[10];
+		u8 AckData[6];
 		bool Calibration(u8 *data,int lenth,u8 check);
 	
 	public:
@@ -42,6 +49,8 @@ class Communication{
 		
 		//返回一个数据包,  数据类型，值，放大倍数，电压
 		u8 *ToServerPack(u8 DataType,float Value,u16 Multiple,float Adc);
+		//返回一个应答包 
+		u8 *AckPacket(u8 Order);
 		
 	
 };

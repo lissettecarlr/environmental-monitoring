@@ -41,3 +41,6 @@
 .\objects\main.o: ..\..\..\lib\offchip\ZPH01\ZPH01.h
 .\objects\main.o: ..\..\..\lib\offchip\ESP8266\ESP8266.h
 .\objects\main.o: C:\Other\keil5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\main.o: app\Communication.h
+.\objects\main.o: ..\..\..\lib\math\Vector3.h
+.\objects\main.o: C:\Other\keil5\ARM\ARMCC\Bin\..\include\math.h
