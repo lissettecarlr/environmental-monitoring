@@ -1,12 +1,12 @@
 .\objects\main.o: app\Main.cpp
 .\objects\main.o: C:\Other\keil5\Keil\STM32F1xx_DFP\2.1.0\Device\Include\stm32f10x.h
-.\objects\main.o: E:\project\环境监测系统\Embedded software\embedded template\template\MDK\stm32103c8t6\RTE\RTE_Components.h
+.\objects\main.o: C:\Users\lissettecarlr\Desktop\embedded template\template\MDK\stm32103c8t6\RTE\RTE_Components.h
 .\objects\main.o: C:\Other\keil5\ARM\CMSIS\4.2.0\CMSIS\Include\core_cm3.h
 .\objects\main.o: C:\Other\keil5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\main.o: C:\Other\keil5\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmInstr.h
 .\objects\main.o: C:\Other\keil5\ARM\CMSIS\4.2.0\CMSIS\Include\core_cmFunc.h
 .\objects\main.o: C:\Other\keil5\Keil\STM32F1xx_DFP\2.1.0\Device\Include\system_stm32f10x.h
-.\objects\main.o: E:\project\环境监测系统\Embedded software\embedded template\template\MDK\stm32103c8t6\RTE\Device\STM32F103C8\stm32f10x_conf.h
+.\objects\main.o: C:\Users\lissettecarlr\Desktop\embedded template\template\MDK\stm32103c8t6\RTE\Device\STM32F103C8\stm32f10x_conf.h
 .\objects\main.o: C:\Other\keil5\Keil\STM32F1xx_DFP\2.1.0\Device\StdPeriph_Driver\inc\stm32f10x_adc.h
 .\objects\main.o: C:\Other\keil5\Keil\STM32F1xx_DFP\2.1.0\Device\Include\stm32f10x.h
 .\objects\main.o: C:\Other\keil5\Keil\STM32F1xx_DFP\2.1.0\Device\StdPeriph_Driver\inc\stm32f10x_dma.h
@@ -35,8 +35,8 @@
 .\objects\main.o: ..\..\..\lib\onchip\capture\InputCapture_EXIT.h
 .\objects\main.o: ..\..\..\lib\offchip\LED\LED.h
 .\objects\main.o: ..\..\..\lib\offchip\MHZ14\MHZ14.h
-.\objects\main.o: ..\..\..\lib\offchip\HCHO\Senser.h
 .\objects\main.o: ..\..\..\lib\offchip\HCHO\HCHO.h
+.\objects\main.o: ..\..\..\lib\offchip\HCHO\Senser.h
 .\objects\main.o: ..\..\..\lib\offchip\ZPH01\ZPH01.h
 .\objects\main.o: ..\..\..\lib\offchip\ESP8266\ESP8266.h
 .\objects\main.o: C:\Other\keil5\ARM\ARMCC\Bin\..\include\string.h

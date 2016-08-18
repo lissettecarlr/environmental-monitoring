@@ -32,7 +32,7 @@
 ".\objects\gpio_stm32f10x.o"
 ".\objects\startup_stm32f10x_md.o"
 ".\objects\system_stm32f10x.o"
---strict --scatter ".\Objects\demo.sct"
+--library_type=microlib --strict --scatter ".\Objects\demo.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\Listings\demo.map" -o .\Objects\demo.axf
