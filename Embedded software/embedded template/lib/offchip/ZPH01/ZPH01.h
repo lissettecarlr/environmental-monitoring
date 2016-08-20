@@ -7,7 +7,6 @@
  *  version:1.1
  *  author: lissettecarlr
  *  data: 2016/5/27
- *  note: 一共三个文件 .H .CPP 和一个抽象类:Senser.h组成 
  ******************************************************************/  
 
 #ifndef _ZPH01_H
